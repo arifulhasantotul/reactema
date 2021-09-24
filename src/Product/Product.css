@@ -5,3 +5,15 @@
 .product_details {
    margin-left: 10px;
 }
+.product_details button {
+   padding: 6px 12px;
+   border-radius: 5px;
+   margin-bottom: 5px;
+   outline: none;
+   background: rgb(248, 157, 19);
+   font-size: 15px;
+   border: 1px solid lightgray;
+}
+.product_details span {
+   margin-left: 5px;
+}

@@ -1,3 +1,5 @@
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import Cart from "../../Cart/Cart";
 import Product from "../../Product/Product";
@@ -5,6 +7,7 @@ import { addToDb, getStoredCart } from "../../utilities/fakedb";
 import "./Shop.css";
 
 const Shop = () => {
+   const cartIcon = <FontAwesomeIcon icon={faShoppingCart} />;
    // get initial product
    const [products, setProducts] = useState([]);
    const [cart, setCart] = useState([]);
@@ -70,6 +73,7 @@ const Shop = () => {
                type="text"
                placeholder="Search here ..."
             />
+            <span>{cartIcon}</span>
          </div>
          {/* shop container  */}
          <div className="shop_container">

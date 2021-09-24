@@ -12,6 +12,10 @@
    border-radius: 5px;
    outline: none;
 }
+.search_container span {
+   color: #fff;
+   margin-left: 7px;
+}
 .shop_container {
    display: grid;
    grid-template-columns: 3fr 1fr;
