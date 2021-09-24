@@ -1,0 +1,21 @@
+.header {
+   text-align: center;
+}
+.header img {
+   height: 50px;
+}
+.header .navbar {
+   padding: 10px 0;
+   background: #000;
+}
+.header .navbar a {
+   text-decoration: none;
+   color: #fff;
+   font-size: 20px;
+   margin: 0 12px;
+   padding: 4px 6px;
+}
+.navbar a:hover {
+   background: rgb(240, 237, 237);
+   color: #000;
+}
