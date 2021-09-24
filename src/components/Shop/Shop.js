@@ -65,7 +65,7 @@ const Shop = () => {
    };
 
    return (
-      <>
+      <div>
          {/* search container  */}
          <div className="search_container">
             <input
@@ -93,7 +93,7 @@ const Shop = () => {
                <Cart cart={cart}></Cart>
             </div>
          </div>
-      </>
+      </div>
    );
 };
 
