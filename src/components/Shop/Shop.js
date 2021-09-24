@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cart from "../../Cart/Cart";
 import Product from "../../Product/Product";
-import { addToDb } from "../../utilities/fakedb";
+import { addToDb, getStoredCart } from "../../utilities/fakedb";
 import "./Shop.css";
 
 const Shop = () => {
@@ -20,6 +20,30 @@ const Shop = () => {
          });
    }, []);
 
+   useEffect(() => {
+      if (products.length) {
+         // get application tab data
+         const storedDBData = getStoredCart();
+         // declare empty array to push find data
+         const newStoredDB = [];
+         // loop through an object to get every key and value
+         for (const key in storedDBData) {
+            // console.log(key, storedDBData[key]);
+            // stored match product
+            const findProduct = products.find((product) => product.key === key);
+            if (findProduct) {
+               // add property to object
+               findProduct.quantity = storedDBData[key];
+               // send find data to empty array
+               newStoredDB.push(findProduct);
+            }
+         }
+         // send converted app tab data to UI
+         setCart(newStoredDB);
+      }
+   }, [products]); //set dependence to call certain times
+
+   // add new product
    const handleAddToCart = (product) => {
       const newCart = [...cart, product];
       setCart(newCart);
@@ -28,6 +52,7 @@ const Shop = () => {
       addToDb(product.key);
    };
 
+   // search functionality
    const handleSearch = (event) => {
       const searchText = event.target.value;
       const searchProducts = products.filter((product) =>
