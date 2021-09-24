@@ -14,6 +14,7 @@
    font-size: 15px;
    border: 1px solid lightgray;
 }
-.product_details span {
-   margin-left: 5px;
+
+.starStyle {
+   color: orange;
 }
