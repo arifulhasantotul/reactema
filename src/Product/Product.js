@@ -4,7 +4,7 @@ import "./Product.css";
 const Product = (props) => {
    // console.log(props);
    const { name, price, category, seller, star, img } = props.product;
-   console.log(props.product);
+   // console.log(props.product);
    return (
       <div className="product">
          <img src={img} alt="" />
